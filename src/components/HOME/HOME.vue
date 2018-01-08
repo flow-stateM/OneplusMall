@@ -2,12 +2,13 @@
   <div>
     <Head></Head>
     <PhoneInfoNav></PhoneInfoNav>
-    <div style="height:3000px;"></div>
+    <HomeContent />
   </div>
 </template>
 <script>
 import Head from '@/components/Head/Head.vue'
 import PhoneInfoNav from '@/components/Head/PhoneInfoNav.vue'
+import HomeContent from '@/components/HOME/HomeContent.vue'
 
 export default {
   name:"HOME",
@@ -17,7 +18,8 @@ export default {
   },
   components:{
     Head,
-    PhoneInfoNav
+    PhoneInfoNav,
+    HomeContent
   }
 }
 </script>
