@@ -27,7 +27,7 @@ export default {
     // console.log(this.$refs)
   },
   mounted(){
-    this.topnum = this.$refs.phoneInfo.getBoundingClientRect().top
+    this.topnum = this.$refs.phoneInfo.offsetHeight*1.6
   },
   data(){
     return {

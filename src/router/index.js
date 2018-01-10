@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HOME from '@/components/HOME/HOME.vue'
+import Mall from '@/components/Mall/Mall.vue'
 import store from '@/store/vuex.store.js'
 
 Vue.use(Router)
@@ -12,6 +13,14 @@ const router = new Router({
       path: '/',
       name: 'HOME',
       component: HOME,
+      beforeEnter(to,from ,next){
+        next();
+      }
+    },
+    {
+      path: '/mall',
+      name: 'Mall',
+      component: Mall,
       beforeEnter(to,from ,next){
         next();
       }

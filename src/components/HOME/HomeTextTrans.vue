@@ -14,9 +14,9 @@
       <p class="transbigtitle" :data-index="1" :key='2'>{{bigtitle}}</p>
       <p class="transcontent" :data-index="2" :key='3'>{{content}}</p>
     </transition-group>
-    <div style="width:100%;position:relative;overflow:hidden;">
+    <div style="width:100%;position:relative;overflow:hidden;marginBottom:20px;">
       <div :ref="name+'left'" class="left"></div>
-      <slot></slot>
+      <img class="changeIMG" :src="imgUrl" alt="">
       <div :ref="name+'right'" class="right"></div>
     </div>
   </div>
@@ -36,7 +36,8 @@ export default {
     'name',
     'title',
     'bigtitle',
-    'content'
+    'content',
+    'imgUrl'
   ],
   created(){
     this.scrollThrottle=this.throttle(this.changeShow,50,50)
@@ -53,8 +54,9 @@ export default {
         }
     },
     changeWidth(e){
-      this.$refs[this.name+'left'].style.width=(this.$refs[this.name+'left'].getBoundingClientRect().bottom-document.body.offsetHeight)/document.body.offsetHeight*40+'%';
-      this.$refs[this.name+'right'].style.width=(this.$refs[this.name+'left'].getBoundingClientRect().bottom-document.body.offsetHeight)/document.body.offsetHeight*40+'%';
+      var nowWidth = (this.$refs[this.name+'left'].getBoundingClientRect().bottom-document.body.offsetHeight)/document.body.offsetHeight*40
+      nowWidth=nowWidth<0?0+'%':nowWidth+'%'
+      this.$refs[this.name+'left'].style.width=this.$refs[this.name+'right'].style.width=nowWidth;
     },
     beforeEnter: function (el) {
       el.style.opacity = 0
@@ -126,5 +128,9 @@ export default {
     right: 0;
     background: #fff;
     transition: 0.15s
+  }
+  .changeIMG{
+    vertical-align: top;
+    width: 100%;
   }
 </style>
