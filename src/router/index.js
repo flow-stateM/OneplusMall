@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HOME from '@/components/HOME/HOME.vue'
 import Mall from '@/components/Mall/Mall.vue'
+import DetilePage from '@/components/Mall/DetilePage.vue'
+import Cart from '@/components/Cart/Cart.vue'
 import store from '@/store/vuex.store.js'
 
 Vue.use(Router)
@@ -20,10 +22,17 @@ const router = new Router({
     {
       path: '/mall',
       name: 'Mall',
-      component: Mall,
-      beforeEnter(to,from ,next){
-        next();
-      }
+      component: Mall
+    },
+    {
+      path: '/detile',
+      name: 'detile',
+      component: DetilePage
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
     }
   ]
 })

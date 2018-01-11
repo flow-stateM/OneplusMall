@@ -90,6 +90,7 @@ export default {
   },
   destroyed () {
     window.removeEventListener('scroll', this.scrollThrottle)
+    window.removeEventListener('scroll', this.scrollIMGThrottle)
   }
 }
 </script>

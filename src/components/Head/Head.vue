@@ -1,10 +1,10 @@
 <template>
   <header style="backgroundColor:#fff;width:100%;height:1.6rem;position:relative;">
     <div style="flex:1;lineHeight:1.6rem;">
-      <img style="marginTop:-5px;marginLeft:0.46rem;verticalAlign:middle" src="../../assets/logo.png" alt="">
+      <img @click="toIndex" style="marginTop:-5px;marginLeft:0.46rem;verticalAlign:middle" src="../../assets/logo.png" alt="">
     </div>
     <div style="flex:2;lineHeight:1.6rem;textAlign:right">
-      <yd-icon class="icon" style="marginRight:5px;" name="shopcart" slot="right" color="#999999"></yd-icon>
+      <span @click="toCart"><yd-icon class="icon" style="marginRight:5px;" name="shopcart" slot="right" color="#999999"></yd-icon></span>
       <yd-icon class="icon" style="marginRight:5px;" name="ucenter" slot="right" color="#999999"></yd-icon>
       <span @click="DownMenuShowFn" ><yd-icon class="icon" style="marginRight:5px;verticalAlign:middle" name="type" color="#999999"></yd-icon></span>
     </div>
@@ -42,6 +42,9 @@ export default {
     }
   },
   methods:{
+    toCart(){
+      this.$router.push('/cart')
+    },
     toIndex(){
       this.$router.push('/')
     },
