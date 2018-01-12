@@ -4,9 +4,9 @@
       <img @click="toIndex" style="marginTop:-5px;marginLeft:0.46rem;verticalAlign:middle" src="../../assets/logo.png" alt="">
     </div>
     <div style="flex:2;lineHeight:1.6rem;textAlign:right">
-      <span @click="toCart"><yd-icon class="icon" style="marginRight:5px;" name="shopcart" slot="right" color="#999999"></yd-icon></span>
-      <yd-icon class="icon" style="marginRight:5px;" name="ucenter" slot="right" color="#999999"></yd-icon>
-      <span @click="DownMenuShowFn" ><yd-icon class="icon" style="marginRight:5px;verticalAlign:middle" name="type" color="#999999"></yd-icon></span>
+      <span @click="toCart"><yd-icon class="icon" name="shopcart" slot="right" color="#999999"></yd-icon></span>
+      <span @click="toLogin"><Avatar class="icon" :src="loginAvatar()" icon="person" color="#999999"></Avatar></span>
+      <span @click="DownMenuShowFn" ><yd-icon class="icon" name="type" color="#999999"></yd-icon></span>
     </div>
     <transition
       name="DownMenuContent"
@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import {Avatar} from 'iview'
+import AvatarImg from '@/assets/logo.png'
 export default {
   name:'Head',
   data(){
@@ -41,7 +43,13 @@ export default {
       DownMenuItemShow:false
     }
   },
+  components:{
+    Avatar
+  },
   methods:{
+    toLogin(){
+      this.$router.push('/login')
+    },
     toCart(){
       this.$router.push('/cart')
     },
@@ -70,6 +78,9 @@ export default {
         el.style.transform=''
         done();
       },delay)
+    },
+    loginAvatar(){
+      return this.$store.state.login.isLogin?'http://image01.oneplus.cn/shop/201712/20/1134/b81ea647cd4bff0ecf76596db9e27d35.jpg':''
     }
   }
 }
@@ -83,9 +94,9 @@ export default {
     display: flex;
   }
   .icon{
-    margin-right:5px;
     vertical-align:middle;
-    padding:10px;
+    margin: 5px;
+    margin-right:10px;
   }
   .HeadDownMenu{
     position: absolute;

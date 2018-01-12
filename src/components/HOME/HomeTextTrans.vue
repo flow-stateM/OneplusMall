@@ -54,7 +54,7 @@ export default {
         }
     },
     changeWidth(e){
-      var nowWidth = (this.$refs[this.name+'left'].getBoundingClientRect().bottom-document.body.offsetHeight)/document.body.offsetHeight*40
+      var nowWidth = (this.$refs[this.name+'left'].getBoundingClientRect().bottom-document.body.offsetHeight)/document.body.offsetHeight*60
       nowWidth=nowWidth<0?0+'%':nowWidth+'%'
       this.$refs[this.name+'left'].style.width=this.$refs[this.name+'right'].style.width=nowWidth;
     },

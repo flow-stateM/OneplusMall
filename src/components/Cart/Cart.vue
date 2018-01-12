@@ -13,7 +13,7 @@
             <span>{{value.name}}</span>
             <span style="marginLeft: 10px;">颜色:</span>
             <span :style="{backgroundColor:value.color}" class="cartColor"></span>
-            <span @click="deleteFn" class="delete">X</span>
+            <span :data-id="key" @click="deleteFn" class="delete">X</span>
           </div>
           <div class="cartPrice" style="">￥{{value.price}}</div>
           <div style="position:relative;width:100%;height:0.7rem;lineHeight:0.7rem">
@@ -71,9 +71,9 @@ export default {
       }
       this.count = nowCount
     },
-    deleteFn(){
-      this.cartNow ={};
-      this.count =0;
+    deleteFn(e){
+      this.count = this.count - this.cartNow[e.target.dataset.id].count
+      delete this.cartNow[e.target.dataset.id]
       this.$store.commit('changeCart',[this.cartNow,this.count])
     },
     computeSmallAll(price,num){

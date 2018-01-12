@@ -4,6 +4,7 @@ import HOME from '@/components/HOME/HOME.vue'
 import Mall from '@/components/Mall/Mall.vue'
 import DetilePage from '@/components/Mall/DetilePage.vue'
 import Cart from '@/components/Cart/Cart.vue'
+import Login from '@/components/Login/Login.vue'
 import store from '@/store/vuex.store.js'
 
 Vue.use(Router)
@@ -16,6 +17,7 @@ const router = new Router({
       name: 'HOME',
       component: HOME,
       beforeEnter(to,from ,next){
+        document.documentElement.scrollTop=0
         next();
       }
     },
@@ -33,6 +35,11 @@ const router = new Router({
       path: '/cart',
       name: 'cart',
       component: Cart
+    },
+    {
+      path:'/login',
+      name:'login',
+      component:Login
     }
   ]
 })

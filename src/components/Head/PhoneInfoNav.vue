@@ -63,7 +63,7 @@ export default {
       this.isFixVal = this.$refs.phoneInfo.getBoundingClientRect().top<=0&&document.documentElement.scrollTop>this.topnum
     },
     buyFn(){
-      return 
+      this.$router.push('/mall')
     }
   },
   destroyed () {
