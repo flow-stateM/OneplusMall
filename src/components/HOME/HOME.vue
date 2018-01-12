@@ -3,12 +3,14 @@
     <Head></Head>
     <PhoneInfoNav></PhoneInfoNav>
     <HomeContent />
+    <Footer></Footer>
   </div>
 </template>
 <script>
-import Head from '@/components/Head/Head.vue'
-import PhoneInfoNav from '@/components/Head/PhoneInfoNav.vue'
-import HomeContent from '@/components/HOME/HomeContent.vue'
+import Head from '../Head/Head.vue'
+import PhoneInfoNav from '../Head/PhoneInfoNav.vue'
+import HomeContent from './HomeContent.vue'
+import Footer from '../Footer/Footer.vue'
 
 export default {
   name:"HOME",
@@ -19,7 +21,8 @@ export default {
   components:{
     Head,
     PhoneInfoNav,
-    HomeContent
+    HomeContent,
+    Footer
   }
 }
 </script>

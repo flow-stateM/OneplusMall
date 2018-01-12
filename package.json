@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "babel-plugin-import": "^1.6.3",
     "fastclick": "^1.0.6",
+    "iview": "^2.8.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-ydui": "^1.1.8",
